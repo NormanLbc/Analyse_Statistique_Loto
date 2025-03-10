@@ -6,7 +6,7 @@ Une première réflexion a porté sur le choix du jeu : Loto ou EuroMillions ? L
 
 Pour mieux comparer ces deux jeux, une analyse comparative des gains potentiels obtenus avec les mêmes combinaisons gagnantes a été réalisée (voir tableau comparatif joint). Les résultats montrent clairement que, pour un même nombre de numéros trouvés, le Loto offre généralement des gains plus intéressants pour les combinaisons intermédiaires.
 
-![ ](Images/Comparaison Gains Loto - Euromillion.png)
+<img src="Images/Comparaison%20Gains%20Loto%20-%20Euromillion.png" alt="Comparaison Gains Loto et EuroMillion" width="200">
 
   L'objectif principal de ce projet sera ainsi de déterminer s'il est possible, par une analyse statistique poussée, d'augmenter significativement ses chances de trouver une combinaison gagnante au Loto. Peut-on identifier des régularités, des motifs ou des combinaisons particulièrement avantageuses grâce à une approche méthodique et rigoureuse ? C'est à cette question que tentera de répondre cette étude statistique approfondie.
 
@@ -33,9 +33,19 @@ Combien de tickets faut-il acheter pour viser une combinaison de 3 boules et 1 n
 - **Paramètres :** SOMME_MIN = 60, SOMME_MAX = 199.
 - **Logique :** Ce filtre accepte une combinaison si la somme totale des 5 numéros est comprise entre 60 et 199 inclusivement.
 
+<p align="center">
+  <table>
+    <tr>
+      <td style="border: 10px solid lightblue; border-radius: 10px; padding: 10px;">
+        <img src="Images/Filtre_Somme.png" 
+             alt="Filtre Somme"
+             width="700">
+      </td>
+    </tr>
+  </table>
+</p>
 
-
-1. **Filtre Dizaines (filtre_dizaines)**
+2. **Filtre Dizaines (filtre_dizaines)**
 
 - **Objectif :** Éviter les combinaisons où trop de numéros appartiennent à la même dizaine, ce qui est statistiquement moins courant.
 - **Paramètres :** DIZAINES_MAX = 3 (maximum de 3 numéros par tranche de dix).
@@ -43,7 +53,7 @@ Combien de tickets faut-il acheter pour viser une combinaison de 3 boules et 1 n
 
 
 
-2. **Filtre Suite (filtre_suite)**
+3. **Filtre Suite (filtre_suite)**
 
 - **Objectif :** Limiter les séquences de numéros consécutifs, car les longues suites sont rares dans les tirages.
 - **Paramètres :** SUITE_MAX = 3 (maximum de 3 numéros consécutifs).
@@ -51,7 +61,7 @@ Combien de tickets faut-il acheter pour viser une combinaison de 3 boules et 1 n
 
 
 
-1. **Filtre Médiane (filtre_mediane)**
+4. **Filtre Médiane (filtre_mediane)**
 
 - **Objectif :** Contrôler la médiane des écarts entre les numéros consécutifs pour éviter des dispersions trop faibles ou trop élevées.
 - **Paramètres :** MEDIAN_MIN = 2.5, MEDIAN_MAX = 12.5.
@@ -59,7 +69,7 @@ Combien de tickets faut-il acheter pour viser une combinaison de 3 boules et 1 n
 
 
 
-1. **Filtre Variance (filtre_variance)**
+5. **Filtre Variance (filtre_variance)**
 
 - **Objectif :** Mesurer la dispersion des numéros pour éviter des combinaisons trop regroupées ou trop éparpillées.
 - **Paramètres :** VARIANCE_MIN = 20, VARIANCE_MAX = 355.
@@ -67,7 +77,7 @@ Combien de tickets faut-il acheter pour viser une combinaison de 3 boules et 1 n
 
 
 
-1. **Filtre Écart Consécutif (filtre_ecart_consecutif)**
+6. **Filtre Écart Consécutif (filtre_ecart_consecutif)**
 
 - **Objectif :** Limiter les répétitions d'écarts identiques entre numéros consécutifs.
 - **Paramètres :** ECART_CONSECUTIF = (1, 5, 2) :
@@ -77,7 +87,7 @@ Combien de tickets faut-il acheter pour viser une combinaison de 3 boules et 1 n
 
 
 
-1. **Filtre QuartileShift (filtre_quartileshift)**
+7. **Filtre QuartileShift (filtre_quartileshift)**
 
 - **Objectif :** Valider la position des numéros selon des zones prédéfinies pour assurer une distribution équilibrée.
 
@@ -96,7 +106,7 @@ La combinaison est acceptée si le score total est compris entre 2.5 et 5.0.
 
 
 
-1. **Filtres Somme3F/Somme3C/Somme3L**
+8. **Filtres Somme3F/Somme3C/Somme3L**
 
 - **Objectif :** Contrôler la somme des groupes de trois numéros au sein d'une combinaison pour s'assurer qu'ils se situent dans des plages considérées comme réalistes. « 3 First », « 3 Center », et « 3 Last ».
 - **Paramètres :**
@@ -109,7 +119,7 @@ La combinaison est acceptée si le score total est compris entre 2.5 et 5.0.
 
 
 
-1. **Filtre MPS (Mean Population Similarity) (filtre_mps)**
+9. **Filtre MPS (Mean Population Similarity) (filtre_mps)**
 
 - **Objectif :** Mesurer la similarité moyenne d'une combinaison avec les tirages historiques pour éviter les répétitions.
 - **Paramètres :** MPS_MIN = 0.095, MPS_MAX = 0.107.
@@ -133,7 +143,7 @@ J’ai voulu alors attribué un score en fonction de la similarité avec l’his
 
 Mais en visualisant l’histogramme, on voit bien que la distribution n’est pas bonne. Il n’y a pas de tendance, On aurait du rester sur la notion de similarité max avec un grand nombre de combinaison de l’historique.
 
-1. **Filtre Comparatif (filtre_comparatif)**
+10. **Filtre Comparatif (filtre_comparatif)**
 
 - **Objectif :** Éviter les combinaisons trop similaires aux tirages récents, réduisant ainsi la probabilité de répétition.
 - **Paramètres :** SIMILARITE_RECENTE_THRESHOLD = 3 (seuil de similarité fixé à 3 numéros).
