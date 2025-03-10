@@ -303,9 +303,9 @@ Lorsqu’on applique tous ces filtres en même temps, que se passe-t-il ? On va 
   <table>
     <tr>
       <td style="border: 5px solid blue; border-radius: 5px; padding: 5px;">
-        <img src="Images/Stats%20Historique.png" 
+        <img src="Images/Stats%20historique.png" 
              alt="Stats Historique"
-             width="700">
+             width="500">
       </td>
     </tr>
   </table>
@@ -321,7 +321,7 @@ Maintenant la question c’est : en appliquant ces mêmes filtres combien de com
   <table>
     <tr>
       <td style="border: 5px solid blue; border-radius: 5px; padding: 5px;">
-        <img src="Images/Stats%20Combinaisons.png" 
+        <img src="Images/Stats%20combinaisons.png" 
              alt="Stats Combinaisons"
              width="700">
       </td>
@@ -351,9 +351,9 @@ On va appliquer une méthode de regroupement heuristique afin de déterminer les
   <table>
     <tr>
       <td style="border: 5px solid blue; border-radius: 5px; padding: 5px;">
-        <img src="Images/Stats%20Regroupement.png" 
+        <img src="Images/Stats%20regroupement.png" 
              alt="Stats Regroupement"
-             width="700">
+             width="400">
       </td>
     </tr>
   </table>
