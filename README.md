@@ -36,7 +36,7 @@ Combien de tickets faut-il acheter pour viser une combinaison de 3 boules et 1 n
 <p align="center">
   <table>
     <tr>
-      <td style="border: 10px solid lightblue; border-radius: 10px; padding: 10px;">
+      <td style="border: 5px solid blue; border-radius: 5px; padding: 5px;">
         <img src="Images/Filtre_Somme.png" 
              alt="Filtre Somme"
              width="700">
@@ -51,7 +51,17 @@ Combien de tickets faut-il acheter pour viser une combinaison de 3 boules et 1 n
 - **Paramètres :** DIZAINES_MAX = 3 (maximum de 3 numéros par tranche de dix).
 - **Logique :** Pour chaque tranche de dix (0-9, 10-19, etc.), ce filtre vérifie qu'il n'y a pas plus de 3 numéros présents.
 
-
+<p align="center">
+  <table>
+    <tr>
+      <td style="border: 5px solid blue; border-radius: 5px; padding: 5px;">
+        <img src="Images/Filtre_Dizaine.png" 
+             alt="Filtre Dizaine"
+             width="700">
+      </td>
+    </tr>
+  </table>
+</p>
 
 3. **Filtre Suite (filtre_suite)**
 
@@ -59,7 +69,17 @@ Combien de tickets faut-il acheter pour viser une combinaison de 3 boules et 1 n
 - **Paramètres :** SUITE_MAX = 3 (maximum de 3 numéros consécutifs).
 - **Logique :** Ce filtre compte les séquences où les numéros se suivent. Si une suite de 4 numéros consécutifs ou plus est détectée, la combinaison est rejetée.
 
-
+<p align="center">
+  <table>
+    <tr>
+      <td style="border: 5px solid blue; border-radius: 5px; padding: 5px;">
+        <img src="Images/Filtre_Suite.png" 
+             alt="Filtre Suite"
+             width="700">
+      </td>
+    </tr>
+  </table>
+</p>
 
 4. **Filtre Médiane (filtre_mediane)**
 
@@ -67,7 +87,17 @@ Combien de tickets faut-il acheter pour viser une combinaison de 3 boules et 1 n
 - **Paramètres :** MEDIAN_MIN = 2.5, MEDIAN_MAX = 12.5.
 - **Logique :** Après avoir trié les numéros, ce filtre calcule les différences entre chaque numéro consécutif et en détermine la médiane. Si cette médiane n'est pas comprise entre 2.5 et 12.5, la combinaison est rejetée.
 
-
+<p align="center">
+  <table>
+    <tr>
+      <td style="border: 5px solid blue; border-radius: 5px; padding: 5px;">
+        <img src="Images/Filtre_Médiane.png" 
+             alt="Filtre Médiane"
+             width="700">
+      </td>
+    </tr>
+  </table>
+</p>
 
 5. **Filtre Variance (filtre_variance)**
 
@@ -75,7 +105,17 @@ Combien de tickets faut-il acheter pour viser une combinaison de 3 boules et 1 n
 - **Paramètres :** VARIANCE_MIN = 20, VARIANCE_MAX = 355.
 - **Logique :** Ce filtre calcule la variance des 5 numéros. Une variance trop faible ou trop élevée indique une distribution inhabituelle des numéros, et la combinaison est alors rejetée.
 
-
+<p align="center">
+  <table>
+    <tr>
+      <td style="border: 5px solid blue; border-radius: 5px; padding: 5px;">
+        <img src="Images/Filtre_Variance.png" 
+             alt="Filtre Variance"
+             width="700">
+      </td>
+    </tr>
+  </table>
+</p>
 
 6. **Filtre Écart Consécutif (filtre_ecart_consecutif)**
 
@@ -85,13 +125,33 @@ Combien de tickets faut-il acheter pour viser une combinaison de 3 boules et 1 n
   - Maximum de 2 répétitions consécutives.
 - **Logique :** Ce filtre rejette les combinaisons où un même écart se répète plus de 2 fois consécutivement entre les numéros triés.
 
-
+<p align="center">
+  <table>
+    <tr>
+      <td style="border: 5px solid blue; border-radius: 5px; padding: 5px;">
+        <img src="Images/Filtre_Ecart_Consécutif.png" 
+             alt="Filtre Ecart Consécutif"
+             width="700">
+      </td>
+    </tr>
+  </table>
+</p>
 
 7. **Filtre QuartileShift (filtre_quartileshift)**
 
 - **Objectif :** Valider la position des numéros selon des zones prédéfinies pour assurer une distribution équilibrée.
 
-
+<p align="center">
+  <table>
+    <tr>
+      <td style="border: 5px solid blue; border-radius: 5px; padding: 5px;">
+        <img src="Images/Méthode%20QuartileShift.png" 
+             alt="Méthode QuartileShift"
+             width="700">
+      </td>
+    </tr>
+  </table>
+</p>
 
 Pour tester ce filtre, plusieurs méthodes ont été évaluées, mais c'est la méthode Quartile Shift qui a été sélectionnée. Elle s'inspire du filtrage par quartiles tout en intégrant une correction basée sur l'écart entre la médiane et la moyenne. Cela permet d'ajuster les bornes en fonction des asymétries des distributions, offrant ainsi une meilleure représentation des tendances des tirages.
 
@@ -104,7 +164,17 @@ Plusieurs méthodes ont été testé en utilisant le programme testBorne95.py.
 
 La combinaison est acceptée si le score total est compris entre 2.5 et 5.0.
 
-
+<p align="center">
+  <table>
+    <tr>
+      <td style="border: 5px solid blue; border-radius: 5px; padding: 5px;">
+        <img src="Images/Filtre_QuartileShift.png" 
+             alt="Filtre QuartileShift"
+             width="700">
+      </td>
+    </tr>
+  </table>
+</p>
 
 8. **Filtres Somme3F/Somme3C/Somme3L**
 
@@ -115,9 +185,41 @@ La combinaison est acceptée si le score total est compris entre 2.5 et 5.0.
   - **SOMME3L_MIN = 49, SOMME3L_MAX = 138 :** Ces limites concernent la somme des trois derniers numéros.
 - **Logique :** Pour chaque combinaison, ce filtre calcule les sommes des trois premiers, trois centraux et trois derniers numéros. Si l'une de ces sommes ne se situe pas dans la plage spécifiée, la combinaison est rejetée.
 
+<p align="center">
+  <table>
+    <tr>
+      <td style="border: 5px solid blue; border-radius: 5px; padding: 5px;">
+        <img src="Images/Filtre_Somme3F.png" 
+             alt="Filtre QuartileShift"
+             width="700">
+      </td>
+    </tr>
+  </table>
+</p>
 
+<p align="center">
+  <table>
+    <tr>
+      <td style="border: 5px solid blue; border-radius: 5px; padding: 5px;">
+        <img src="Images/Filtre_Somme3C.png" 
+             alt="Filtre QuartileShift"
+             width="700">
+      </td>
+    </tr>
+  </table>
+</p>
 
-
+<p align="center">
+  <table>
+    <tr>
+      <td style="border: 5px solid blue; border-radius: 5px; padding: 5px;">
+        <img src="Images/Filtre_Somme3L.png" 
+             alt="Filtre QuartileShift"
+             width="700">
+      </td>
+    </tr>
+  </table>
+</p>
 
 9. **Filtre MPS (Mean Population Similarity) (filtre_mps)**
 
@@ -125,17 +227,47 @@ La combinaison est acceptée si le score total est compris entre 2.5 et 5.0.
 - **Paramètres :** MPS_MIN = 0.095, MPS_MAX = 0.107.
 - **Logique :** Pour chaque combinaison, ce filtre calcule le nombre moyen de numéros communs avec l'historique des tirages. Si cette moyenne n'est pas comprise entre 0.095 et 0.107, la combinaison est rejetée.
 
-
+<p align="center">
+  <table>
+    <tr>
+      <td style="border: 5px solid blue; border-radius: 5px; padding: 5px;">
+        <img src="Images/Filtre_MPS.png" 
+             alt="Filtre MPS"
+             width="700">
+      </td>
+    </tr>
+  </table>
+</p>
 
 Bon clairement, en regarde l’histogramme, on se rend compte que la méthode de calcul n’est pas la bonne. Alors pourquoi en est-on arrivé là ?
 
 - On a regardé le nombre de similarité (boule en commun) entre un tirage et les tirages précédent. Pour cela, on prend un tirage de l’historique et on le compare avec son tirage précédent « n-1 », et les deux précédents « n-2 »…Etc. On obtient ainsi :
 
-
+<p align="center">
+  <table>
+    <tr>
+      <td style="border: 5px solid blue; border-radius: 5px; padding: 5px;">
+        <img src="Images/Répartition%20du%20nombre%20de%20similarité%20en%20fonction%20du%20nombre%20de%20combinaison%20comparée.png" 
+             alt="Répartition du nombre de similarité en fonction du nombre de combinaison comparée"
+             width="700">
+      </td>
+    </tr>
+  </table>
+</p>
 
 On se rend compte que pour des tirages proche (n-1, n-2) les similarités sont majoritairement de 0, 1, et 2. Mais très peu de tirage avec des similarités de 3 ou plus. Mais que se passe-t-il si on compare avec beaucoup plus de tirage ?
 
-
+<p align="center">
+  <table>
+    <tr>
+      <td style="border: 5px solid blue; border-radius: 5px; padding: 5px;">
+        <img src="Images/Répartition%20du%20nombre%20de%20similarité%20en%20fonction%20du%20nombre%20de%20combinaison%20comparée%201000.png" 
+             alt="Répartition du nombre de similarité en fonction du nombre de combinaison comparée 1000"
+             width="700">
+      </td>
+    </tr>
+  </table>
+</p>
 
 Cette fois-ci la similarité maximal entre 1 tirage et beaucoup d’autre les 500 tirages précédents, voire les 1000 tirages précédent, cette fois-ci on tend plutôt vers une similarité de 3 ou 4.
 
@@ -149,7 +281,17 @@ Mais en visualisant l’histogramme, on voit bien que la distribution n’est pa
 - **Paramètres :** SIMILARITE_RECENTE_THRESHOLD = 3 (seuil de similarité fixé à 3 numéros).
 - **Logique :** Ce filtre compare chaque nouvelle combinaison aux 10 derniers tirages. Si une combinaison partage au moins 3 numéros avec l'un de ces tirages récents, elle est rejetée.
 
-
+<p align="center">
+  <table>
+    <tr>
+      <td style="border: 5px solid blue; border-radius: 5px; padding: 5px;">
+        <img src="Images/Filtre_Comparatif.png" 
+             alt="Filtre Comparatif"
+             width="700">
+      </td>
+    </tr>
+  </table>
+</p>
 
 On a donc un filtre mps qui statu d’un score en fonction de similarité avec tout l’historique, et un filtre comparatif qui compare avec les 10 tirages précédents.
 
@@ -157,7 +299,17 @@ On a donc un filtre mps qui statu d’un score en fonction de similarité avec t
 
 Lorsqu’on applique tous ces filtres en même temps, que se passe-t-il ? On va d’abord tester tous ces filtres sur l’historique.
 
-
+<p align="center">
+  <table>
+    <tr>
+      <td style="border: 5px solid blue; border-radius: 5px; padding: 5px;">
+        <img src="Images/Stats%20Historique.png" 
+             alt="Stats Historique"
+             width="700">
+      </td>
+    </tr>
+  </table>
+</p>
 
 Il s’agit du résultat des filtres avec les paramètres que j’ai choisi. Bien entendu chacun peut ajuster ces paramètres en fonction de ses souhaits.
 
@@ -165,7 +317,17 @@ Maintenant la question c’est : en appliquant ces mêmes filtres combien de com
 
 **APPLICATION SUR TOUTES LES COMBINAISONS POSSIBLES ?**
 
-
+<p align="center">
+  <table>
+    <tr>
+      <td style="border: 5px solid blue; border-radius: 5px; padding: 5px;">
+        <img src="Images/Stats%20Combinaisons.png" 
+             alt="Stats Combinaisons"
+             width="700">
+      </td>
+    </tr>
+  </table>
+</p>
 
 On calcul tous les filtres, et on peut choisir d’extraire les combinaisons avec tous les filtres de passés, ou seulement 12 sur 13, 11 sur 13 ou moins. En sélectionnant un filtrage complet (13 filtres sur 13) on extrait 1 465 138 combinaisons. On a donc enlevé seulement 441 746 combinaisons. On n’a enlevé que 23% de combinaisons possibles.
 
@@ -185,6 +347,17 @@ On va appliquer une méthode de regroupement heuristique afin de déterminer les
 
 **Heuristique 2 sur 5** : Cette méthode regroupe les combinaisons partageant au moins 2 numéros identiques, en ne gardant que la plus petite de chaque groupe.
 
+<p align="center">
+  <table>
+    <tr>
+      <td style="border: 5px solid blue; border-radius: 5px; padding: 5px;">
+        <img src="Images/Stats%20Regroupement.png" 
+             alt="Stats Regroupement"
+             width="700">
+      </td>
+    </tr>
+  </table>
+</p>
 
 Là, on voit nos probabilité de gain explosées ! On diminue drastiquement le nombre de combinaisons.
 
@@ -194,5 +367,16 @@ Maintenant, il faut tester et vérifier avec la réalité.
 
 Nous allons ici tester les combinaisons tiré de notre regroupement heuristique 2 sur 5. Et tester sur plusieurs tirage.
 
+<p align="center">
+  <table>
+    <tr>
+      <td style="border: 5px solid blue; border-radius: 5px; padding: 5px;">
+        <img src="Images/Résultats.png" 
+             alt="Résultats"
+             width="700">
+      </td>
+    </tr>
+  </table>
+</p>
 
 Bon…on ne va pas être riche tout de suite. Sauf le 4 janvier 2025 où on a eu de la chance. Ce qui est plutôt étonnant c’est de se retrouvé régulièrement avec des similiarités supérieur à ceux espérés. On s’attendait à trouver des similarités max de 2-0 (2 boules 0 numéro chance), éventuellement 1 étoile chance (qui sont alors générés aléatoirement). Et pourtant on trouve assez souvent des 3-0 voire 3-1 !
