@@ -6,7 +6,7 @@ Une première réflexion a porté sur le choix du jeu : Loto ou EuroMillions ? L
 
 Pour mieux comparer ces deux jeux, une analyse comparative des gains potentiels obtenus avec les mêmes combinaisons gagnantes a été réalisée (voir tableau comparatif joint). Les résultats montrent clairement que, pour un même nombre de numéros trouvés, le Loto offre généralement des gains plus intéressants pour les combinaisons intermédiaires.
 
-![](Images/Comparaison Gains Loto - Euromillion.png)
+![ ](Images/Comparaison Gains Loto - Euromillion.png)
 
   L'objectif principal de ce projet sera ainsi de déterminer s'il est possible, par une analyse statistique poussée, d'augmenter significativement ses chances de trouver une combinaison gagnante au Loto. Peut-on identifier des régularités, des motifs ou des combinaisons particulièrement avantageuses grâce à une approche méthodique et rigoureuse ? C'est à cette question que tentera de répondre cette étude statistique approfondie.
 
